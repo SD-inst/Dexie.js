@@ -212,8 +212,8 @@ importers:
         specifier: '*'
         version: 1.0.0
       clarinet:
-        specifier: dfahlander/clarinet
-        version: https://codeload.github.com/dfahlander/clarinet/tar.gz/d1dc89f7e67488b16ad98b2464d29a9b3bc6f5ef
+        specifier: SD-inst/clarinet
+        version: '@rkfg/clarinet@https://codeload.github.com/SD-inst/clarinet/tar.gz/93bb44b6f41a78edb593037b2f0319e301348646'
       just-build:
         specifier: ^0.9.24
         version: 0.9.24
@@ -291,7 +291,7 @@ importers:
         version: 0.6.3(@types/node@20.2.5)(rollup@2.79.0)
       ts-loader:
         specifier: ^8.0.17
-        version: 8.4.0(typescript@5.3.3)(webpack@5.74.0(uglify-js@3.14.2)(webpack-cli@4.10.0))
+        version: 8.4.0(typescript@5.3.3)(webpack@5.74.0)
       typescript:
         specifier: ^5.3.3
         version: 5.3.3
@@ -344,14 +344,14 @@ importers:
         specifier: 5.3.0
         version: 5.3.0(@popperjs/core@2.11.8)
       dexie:
-        specifier: workspace:^
-        version: link:../..
+        specifier: ^4.0.11
+        version: 4.0.11
       dexie-cloud-addon:
-        specifier: workspace:^
-        version: link:../../addons/dexie-cloud
+        specifier: ^4.0.11
+        version: 4.0.11(dexie@4.0.11)
       dexie-react-hooks:
-        specifier: workspace:^
-        version: link:../../libs/dexie-react-hooks
+        specifier: ^1.1.7
+        version: 1.1.7(@types/react@18.2.8)(dexie@4.0.11)(react@17.0.2)
       postcss-flexbugs-fixes:
         specifier: ^5.0.2
         version: 5.0.2(postcss@8.4.24)
@@ -1553,6 +1553,11 @@ packages:
       react: '>=16.14.0'
       react-dom: '>=16.14.0'
 
+  '@rkfg/clarinet@https://codeload.github.com/SD-inst/clarinet/tar.gz/93bb44b6f41a78edb593037b2f0319e301348646':
+    resolution: {tarball: https://codeload.github.com/SD-inst/clarinet/tar.gz/93bb44b6f41a78edb593037b2f0319e301348646}
+    version: 0.12.4
+    engines: {chrome: '>=16.0.912', firefox: '>=0.8.0', node: '>=0.3.6'}
+
   '@rollup/plugin-alias@3.1.9':
     resolution: {integrity: sha512-QI5fsEvm9bDzt32k39wpOwZhVzRcL5ydcffUHMyLVaVaLeC70I8TJZ17F1z1eMoLu4E/UOcH9BWVkKpIKdrfiw==}
     engines: {node: '>=8.0.0'}
@@ -2700,11 +2705,6 @@ packages:
   cjs-module-lexer@1.2.2:
     resolution: {integrity: sha512-cOU9usZw8/dXIXKtwa8pM0OTJQuJkxMN6w30csNRUerHfeQ5R6U3kkU/FtJeIf3M202OHfY2U8ccInBG7/xogA==}
 
-  clarinet@https://codeload.github.com/dfahlander/clarinet/tar.gz/d1dc89f7e67488b16ad98b2464d29a9b3bc6f5ef:
-    resolution: {tarball: https://codeload.github.com/dfahlander/clarinet/tar.gz/d1dc89f7e67488b16ad98b2464d29a9b3bc6f5ef}
-    version: 0.12.4
-    engines: {chrome: '>=16.0.912', firefox: '>=0.8.0', node: '>=0.3.6'}
-
   classnames@2.3.2:
     resolution: {integrity: sha512-CSbhY4cFEJRe6/GQzIk5qXZ4Jeg5pcsP7b5peFSDpffpe1cqjASH/n9UTjBwOp6XpMSTwQ8Za2K5V02ueA7Tmw==}
 
@@ -3140,8 +3140,24 @@ packages:
     engines: {node: '>= 4.2.1'}
     hasBin: true
 
+  dexie-cloud-addon@4.0.11:
+    resolution: {integrity: sha512-CkszT8Eg8Nk2GV6rDRpoimH/Kb8an8LY9eU2QA20m8CVlmtuKjetIrxoBlA0lNRaUXP5r+6O69AUwne4NldhrA==}
+    engines: {node: '>=14'}
+    peerDependencies:
+      dexie: ^4.0.11
+
   dexie-cloud-common@1.0.47:
     resolution: {integrity: sha512-/8KexyBjnps7ixY4NtkA2AwKVEHrWnPWjkCrA5khB1DkIWSARJD0lR313dZC/O5Y78/FnqcaqnVqyOJkRytyuw==}
+
+  dexie-react-hooks@1.1.7:
+    resolution: {integrity: sha512-Lwv5W0Hk+uOW3kGnsU9GZoR1er1B7WQ5DSdonoNG+focTNeJbHW6vi6nBoX534VKI3/uwHebYzSw1fwY6a7mTw==}
+    peerDependencies:
+      '@types/react': '>=16'
+      dexie: ^3.2 || ^4.0.1-alpha
+      react: '>=16'
+
+  dexie@4.0.11:
+    resolution: {integrity: sha512-SOKO002EqlvBYYKQSew3iymBoN2EQ4BDw/3yprjh7kAfFzjBYkaMNa/pZvcA7HSWlcKSQb9XhPe3wKyQ0x4A8A==}
 
   di@0.0.1:
     resolution: {integrity: sha512-uJaamHkagcZtHPqCIHZxnFrXlunQXgBOsZSUOWwFw31QJCAbyTBoHMW75YOTur5ZNx8pIeAKgf6GWIgaqqiLhA==}
@@ -3529,6 +3545,7 @@ packages:
   eslint@8.56.0:
     resolution: {integrity: sha512-Go19xM6T9puCOWntie1/P997aXxFsOi37JIHRWI514Hc6ZnaHGKY9xFhrU65RT6CcBEzZoGG1e6Nq+DT04ZtZQ==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    deprecated: This version is no longer supported. Please see https://eslint.org/version-support for other options.
     hasBin: true
 
   espree@5.0.1:
@@ -8825,6 +8842,8 @@ snapshots:
       uncontrollable: 8.0.2(react@17.0.2)
       warning: 4.0.3
 
+  '@rkfg/clarinet@https://codeload.github.com/SD-inst/clarinet/tar.gz/93bb44b6f41a78edb593037b2f0319e301348646': {}
+
   '@rollup/plugin-alias@3.1.9(rollup@4.1.4)':
     dependencies:
       rollup: 4.1.4
@@ -9524,17 +9543,17 @@ snapshots:
       '@webassemblyjs/ast': 1.11.1
       '@xtuc/long': 4.2.2
 
-  '@webpack-cli/configtest@1.2.0(webpack-cli@4.10.0(webpack@5.74.0))(webpack@5.74.0(uglify-js@3.14.2)(webpack-cli@4.10.0))':
+  '@webpack-cli/configtest@1.2.0(webpack-cli@4.10.0)(webpack@5.74.0)':
     dependencies:
       webpack: 5.74.0(uglify-js@3.14.2)(webpack-cli@4.10.0)
       webpack-cli: 4.10.0(webpack@5.74.0)
 
-  '@webpack-cli/info@1.5.0(webpack-cli@4.10.0(webpack@5.74.0))':
+  '@webpack-cli/info@1.5.0(webpack-cli@4.10.0)':
     dependencies:
       envinfo: 7.8.1
       webpack-cli: 4.10.0(webpack@5.74.0)
 
-  '@webpack-cli/serve@1.7.0(webpack-cli@4.10.0(webpack@5.74.0))':
+  '@webpack-cli/serve@1.7.0(webpack-cli@4.10.0)':
     dependencies:
       webpack-cli: 4.10.0(webpack@5.74.0)
 
@@ -10166,8 +10185,6 @@ snapshots:
 
   cjs-module-lexer@1.2.2: {}
 
-  clarinet@https://codeload.github.com/dfahlander/clarinet/tar.gz/d1dc89f7e67488b16ad98b2464d29a9b3bc6f5ef: {}
-
   classnames@2.3.2: {}
 
   clean-css@5.3.2:
@@ -10600,9 +10617,23 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+  dexie-cloud-addon@4.0.11(dexie@4.0.11):
+    dependencies:
+      dexie: 4.0.11
+      dexie-cloud-common: 1.0.47
+      rxjs: 7.5.6
+
   dexie-cloud-common@1.0.47:
     dependencies:
       lib0: 0.2.99
+
+  dexie-react-hooks@1.1.7(@types/react@18.2.8)(dexie@4.0.11)(react@17.0.2):
+    dependencies:
+      '@types/react': 18.2.8
+      dexie: 4.0.11
+      react: 17.0.2
+
+  dexie@4.0.11: {}
 
   di@0.0.1: {}
 
@@ -15028,17 +15059,6 @@ snapshots:
       ansi-escapes: 4.3.2
       supports-hyperlinks: 2.3.0
 
-  terser-webpack-plugin@5.3.6(uglify-js@3.14.2)(webpack@5.74.0(uglify-js@3.14.2)(webpack-cli@4.10.0)):
-    dependencies:
-      '@jridgewell/trace-mapping': 0.3.18
-      jest-worker: 27.5.1
-      schema-utils: 3.1.1
-      serialize-javascript: 6.0.1
-      terser: 5.20.0
-      webpack: 5.74.0(uglify-js@3.14.2)(webpack-cli@4.10.0)
-    optionalDependencies:
-      uglify-js: 3.14.2
-
   terser-webpack-plugin@5.3.6(uglify-js@3.14.2)(webpack@5.74.0(uglify-js@3.14.2)):
     dependencies:
       '@jridgewell/trace-mapping': 0.3.18
@@ -15047,6 +15067,17 @@ snapshots:
       serialize-javascript: 6.0.1
       terser: 5.20.0
       webpack: 5.74.0(uglify-js@3.14.2)
+    optionalDependencies:
+      uglify-js: 3.14.2
+
+  terser-webpack-plugin@5.3.6(uglify-js@3.14.2)(webpack@5.74.0):
+    dependencies:
+      '@jridgewell/trace-mapping': 0.3.18
+      jest-worker: 27.5.1
+      schema-utils: 3.1.1
+      serialize-javascript: 6.0.1
+      terser: 5.20.0
+      webpack: 5.74.0(uglify-js@3.14.2)(webpack-cli@4.10.0)
     optionalDependencies:
       uglify-js: 3.14.2
 
@@ -15145,7 +15176,7 @@ snapshots:
 
   ts-interface-checker@0.1.13: {}
 
-  ts-loader@8.4.0(typescript@5.3.3)(webpack@5.74.0(uglify-js@3.14.2)(webpack-cli@4.10.0)):
+  ts-loader@8.4.0(typescript@5.3.3)(webpack@5.74.0):
     dependencies:
       chalk: 4.1.2
       enhanced-resolve: 4.5.0
@@ -15383,9 +15414,9 @@ snapshots:
   webpack-cli@4.10.0(webpack@5.74.0):
     dependencies:
       '@discoveryjs/json-ext': 0.5.7
-      '@webpack-cli/configtest': 1.2.0(webpack-cli@4.10.0(webpack@5.74.0))(webpack@5.74.0(uglify-js@3.14.2)(webpack-cli@4.10.0))
-      '@webpack-cli/info': 1.5.0(webpack-cli@4.10.0(webpack@5.74.0))
-      '@webpack-cli/serve': 1.7.0(webpack-cli@4.10.0(webpack@5.74.0))
+      '@webpack-cli/configtest': 1.2.0(webpack-cli@4.10.0)(webpack@5.74.0)
+      '@webpack-cli/info': 1.5.0(webpack-cli@4.10.0)
+      '@webpack-cli/serve': 1.7.0(webpack-cli@4.10.0)
       colorette: 2.0.19
       commander: 7.2.0
       cross-spawn: 7.0.3
@@ -15522,7 +15553,7 @@ snapshots:
       neo-async: 2.6.2
       schema-utils: 3.1.1
       tapable: 2.2.1
-      terser-webpack-plugin: 5.3.6(uglify-js@3.14.2)(webpack@5.74.0(uglify-js@3.14.2)(webpack-cli@4.10.0))
+      terser-webpack-plugin: 5.3.6(uglify-js@3.14.2)(webpack@5.74.0)
       watchpack: 2.4.0
       webpack-sources: 3.2.3
     optionalDependencies:

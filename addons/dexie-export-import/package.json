@@ -1,6 +1,6 @@
 {
-  "name": "dexie-export-import",
-  "version": "4.1.4",
+  "name": "@rkfg/dexie-export-import",
+  "version": "4.1.4-c",
   "description": "Dexie addon that adds export and import capabilities",
   "main": "dist/dexie-export-import.js",
   "module": "dist/dexie-export-import.mjs",
@@ -38,7 +38,7 @@
     "@rollup/plugin-alias": "^3.1.2",
     "@types/node": "^18.11.18",
     "base64-arraybuffer-es6": "*",
-    "clarinet": "dfahlander/clarinet",
+    "clarinet": "SD-inst/clarinet",
     "just-build": "^0.9.24",
     "rollup-plugin-alias": "^2.2.0",
     "typescript": "^5.3.3",
